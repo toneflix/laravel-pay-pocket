@@ -1,6 +1,6 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket\Traits;
+namespace ToneflixCode\LaravelPayPocket\Traits;
 
 trait ManagesWallet
 {

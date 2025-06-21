@@ -1,9 +1,9 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket\Services;
+namespace ToneflixCode\LaravelPayPocket\Services;
 
-use HPWebdeveloper\LaravelPayPocket\Exceptions\InsufficientBalanceException;
-use HPWebdeveloper\LaravelPayPocket\Interfaces\WalletOperations;
+use ToneflixCode\LaravelPayPocket\Exceptions\InsufficientBalanceException;
+use ToneflixCode\LaravelPayPocket\Interfaces\WalletOperations;
 
 class PocketServices
 {

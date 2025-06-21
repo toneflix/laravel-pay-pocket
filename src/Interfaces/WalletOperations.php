@@ -1,8 +1,8 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket\Interfaces;
+namespace ToneflixCode\LaravelPayPocket\Interfaces;
 
-use HPWebdeveloper\LaravelPayPocket\Exceptions\InsufficientBalanceException;
+use ToneflixCode\LaravelPayPocket\Exceptions\InsufficientBalanceException;
 
 interface WalletOperations
 {

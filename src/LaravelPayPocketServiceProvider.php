@@ -1,6 +1,6 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket;
+namespace ToneflixCode\LaravelPayPocket;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -28,17 +28,17 @@ class LaravelPayPocketServiceProvider extends PackageServiceProvider
     public function bootingPackage()
     {
         $this->publishes([
-            __DIR__.'/../Enums/' => app_path('Enums'),
+            __DIR__ . '/../Enums/' => app_path('Enums'),
         ], 'pay-pocket-wallets');
 
         $this->publishes([
-            __DIR__.'/../config/pay-pocket.php' => config_path('pay-pocket.php'),
+            __DIR__ . '/../config/pay-pocket.php' => config_path('pay-pocket.php'),
         ], 'config');
     }
 
     public function registeringPackage()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/pay-pocket.php', 'pay-pocket');
+        $this->mergeConfigFrom(__DIR__ . '/../config/pay-pocket.php', 'pay-pocket');
     }
 }

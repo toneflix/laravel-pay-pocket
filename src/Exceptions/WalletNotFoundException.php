@@ -1,6 +1,6 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket\Exceptions;
+namespace ToneflixCode\LaravelPayPocket\Exceptions;
 
 use Exception;
 use Throwable;

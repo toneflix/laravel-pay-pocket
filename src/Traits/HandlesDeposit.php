@@ -1,11 +1,11 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket\Traits;
+namespace ToneflixCode\LaravelPayPocket\Traits;
 
 use App\Enums\WalletEnums;
-use HPWebdeveloper\LaravelPayPocket\Exceptions\InvalidDepositException;
-use HPWebdeveloper\LaravelPayPocket\Exceptions\InvalidValueException;
-use HPWebdeveloper\LaravelPayPocket\Exceptions\InvalidWalletTypeException;
+use ToneflixCode\LaravelPayPocket\Exceptions\InvalidDepositException;
+use ToneflixCode\LaravelPayPocket\Exceptions\InvalidValueException;
+use ToneflixCode\LaravelPayPocket\Exceptions\InvalidWalletTypeException;
 use Illuminate\Support\Facades\DB;
 
 trait HandlesDeposit

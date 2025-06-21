@@ -1,13 +1,13 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket\Models;
+namespace ToneflixCode\LaravelPayPocket\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
- * HPWebdeveloper\LaravelPayPocket\Models\WalletsLog
+ * ToneflixCode\LaravelPayPocket\Models\WalletsLog
  *
  * @property string $status
  * @property int|float $from
@@ -24,7 +24,14 @@ class WalletsLog extends Model
     use HasFactory;
 
     protected $fillable = [
-        'from', 'to', 'type', 'ip', 'value', 'wallet_name', 'notes', 'reference',
+        'from',
+        'to',
+        'type',
+        'ip',
+        'value',
+        'wallet_name',
+        'notes',
+        'reference',
     ];
 
     public function loggable(): MorphTo

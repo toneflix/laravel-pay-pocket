@@ -1,10 +1,10 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket\Tests\Models;
+namespace ToneflixCode\LaravelPayPocket\Tests\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use HPWebdeveloper\LaravelPayPocket\Interfaces\WalletOperations;
-use HPWebdeveloper\LaravelPayPocket\Traits\ManagesWallet;
+use ToneflixCode\LaravelPayPocket\Interfaces\WalletOperations;
+use ToneflixCode\LaravelPayPocket\Traits\ManagesWallet;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;

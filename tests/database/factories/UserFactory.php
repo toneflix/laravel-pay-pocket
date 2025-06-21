@@ -1,8 +1,8 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket\Tests\Database\Factories;
+namespace ToneflixCode\LaravelPayPocket\Tests\Database\Factories;
 
-use HPWebdeveloper\LaravelPayPocket\Tests\Models\User;
+use ToneflixCode\LaravelPayPocket\Tests\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

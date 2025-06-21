@@ -1,24 +1,23 @@
-![Laravel Pay Pocket](https://github.com/HPWebdeveloper/laravel-pay-pocket/assets/16323354/8e8ebcf6-f8d4-4811-b97c-fb6362e3f019)
+![Laravel Pay Pocket](https://github.com/toneflix/laravel-pay-pocket/assets/16323354/8e8ebcf6-f8d4-4811-b97c-fb6362e3f019)
 
 # Laravel Pay Pocket
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/hpwebdeveloper/laravel-pay-pocket.svg?style=flat-square)](https://packagist.org/packages/hpwebdeveloper/laravel-pay-pocket)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hpwebdeveloper/laravel-pay-pocket/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hpwebdeveloper/laravel-pay-pocket/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hpwebdeveloper/laravel-pay-pocket/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hpwebdeveloper/laravel-pay-pocket/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Imports](https://github.com/HPWebdeveloper/laravel-pay-pocket/actions/workflows/check_imports.yml/badge.svg?branch=main)](https://github.com/HPWebdeveloper/laravel-pay-pocket/actions/workflows/check_imports.yml)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hpwebdeveloper/laravel-pay-pocket/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hpwebdeveloper/laravel-pay-pocket/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Imports](https://github.com/toneflix/laravel-pay-pocket/actions/workflows/check_imports.yml/badge.svg?branch=main)](https://github.com/toneflix/laravel-pay-pocket/actions/workflows/check_imports.yml)
 
 **Laravel Pay Pocket** is a package designed for Laravel applications, offering the flexibility to manage multiple wallet types within two dedicated database tables, `wallets` and `wallets_logs`.
 
-**Demo:** https://github.com/HPWebdeveloper/demo-pay-pocket
+**Demo:** https://github.com/toneflix/demo-pay-pocket
 
-**Videos:** 
+**Videos:**
 
-- [Laravel Pay Pocket Package: Virtual Wallets in Your Project](https://www.youtube.com/watch?v=KoQyURiwsA4)
+-   [Laravel Pay Pocket Package: Virtual Wallets in Your Project](https://www.youtube.com/watch?v=KoQyURiwsA4)
 
-- [Laravel Exceptions: Why and How to Use? Practical Example.](https://www.youtube.com/watch?v=-Sr18w91v8Q)
+-   [Laravel Exceptions: Why and How to Use? Practical Example.](https://www.youtube.com/watch?v=-Sr18w91v8Q)
 
-- [PHP Enums in Laravel: Practical Example from Package](https://www.youtube.com/watch?v=iUOb-3HQtK8)
-
+-   [PHP Enums in Laravel: Practical Example from Package](https://www.youtube.com/watch?v=iUOb-3HQtK8)
 
 **Note:** This package does not handle payments from payment platforms, but instead offers the concept of virtual money, deposit, and withdrawal.
 
@@ -33,11 +32,11 @@
 
 ### Support Policy
 
-| Version                                         | Laravel      | PHP         | Release date  | End of improvements | End of support |
-|-------------------------------------------------|--------------|-------------|---------------|---------------------| -------------- |
-| 1.x                                             | ^10.0        | 8.1, 8.2, 8.3 | Nov 30, 2023  | Mar 1, 2024         |                |
-| 2.x                                             | ^10.0, ^11.0 |8.2, 8.3| June 27, 2024 | January 30, 2025    |                |
-| 3.x  (atomic operations and restricted wallets) | ^11.0 |8.2, 8.3| comming soon  |    |                |
+| Version                                        | Laravel      | PHP           | Release date  | End of improvements | End of support |
+| ---------------------------------------------- | ------------ | ------------- | ------------- | ------------------- | -------------- |
+| 1.x                                            | ^10.0        | 8.1, 8.2, 8.3 | Nov 30, 2023  | Mar 1, 2024         |                |
+| 2.x                                            | ^10.0, ^11.0 | 8.2, 8.3      | June 27, 2024 | January 30, 2025    |                |
+| 3.x (atomic operations and restricted wallets) | ^11.0        | 8.2, 8.3      | comming soon  |                     |                |
 
 ## Installation:
 
@@ -79,8 +78,8 @@ To use this package you need to implement the `WalletOperations` into `User` mod
 
 ```php
 
-use HPWebdeveloper\LaravelPayPocket\Interfaces\WalletOperations;
-use HPWebdeveloper\LaravelPayPocket\Traits\ManagesWallet;
+use ToneflixCode\LaravelPayPocket\Interfaces\WalletOperations;
+use ToneflixCode\LaravelPayPocket\Traits\ManagesWallet;
 
 class User extends Authenticatable implements WalletOperations
 {
@@ -138,7 +137,7 @@ $user->deposit('wallet_2', 67.89);
 Or using provided facade
 
 ```php
-use HPWebdeveloper\LaravelPayPocket\Facades\LaravelPayPocket;
+use ToneflixCode\LaravelPayPocket\Facades\LaravelPayPocket;
 
 $user = auth()->user();
 LaravelPayPocket::deposit($user, 'wallet_1', 123.45);
@@ -172,7 +171,7 @@ $user->pay(12.34);
 Or using provided facade
 
 ```php
-use HPWebdeveloper\LaravelPayPocket\Facades\LaravelPayPocket;
+use ToneflixCode\LaravelPayPocket\Facades\LaravelPayPocket;
 
 $user = auth()->user();
 LaravelPayPocket::pay($user, 12.34);
@@ -226,12 +225,12 @@ LaravelPayPocket::walletBalanceByType($user, 'wallet_1');
 ### Exceptions
 
 Upon examining the `src/Exceptions` directory within the source code,
-you will discover a variety of exceptions tailored to address each scenario of invalid entry. Review the [demo](https://github.com/HPWebdeveloper/demo-pay-pocket) that accounts for some of the exceptions.
+you will discover a variety of exceptions tailored to address each scenario of invalid entry. Review the [demo](https://github.com/toneflix/demo-pay-pocket) that accounts for some of the exceptions.
 
 ### Log
 
 A typical `wallets_logs` table.
-![Laravel Pay Pocket Log](https://github.com/HPWebdeveloper/laravel-pay-pocket/assets/16323354/0d7f2237-88e1-4ac0-a4f2-ac200bad9273)
+![Laravel Pay Pocket Log](https://github.com/toneflix/laravel-pay-pocket/assets/16323354/0d7f2237-88e1-4ac0-a4f2-ac200bad9273)
 
 ## Testing
 
@@ -260,7 +259,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
--   [Hamed Panjeh](https://github.com/HPWebdeveloper)
+-   [Hamed Panjeh](https://github.com/toneflix)
 -   [All Contributors](../../contributors)
 -   Icon in the above image: pocket by Creative Mahira from [Noun Project](https://thenounproject.com/browse/icons/term/pocket/) (CC BY 3.0)
 
@@ -268,4 +267,4 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[i8]: https://github.com/HPWebdeveloper/laravel-pay-pocket/releases/tag/2.0.0
+[i8]: https://github.com/toneflix/laravel-pay-pocket/releases/tag/2.0.0

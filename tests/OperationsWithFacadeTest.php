@@ -1,8 +1,8 @@
 <?php
 
-use HPWebdeveloper\LaravelPayPocket\Facades\LaravelPayPocket;
-use HPWebdeveloper\LaravelPayPocket\Models\WalletsLog;
-use HPWebdeveloper\LaravelPayPocket\Tests\Models\User;
+use ToneflixCode\LaravelPayPocket\Facades\LaravelPayPocket;
+use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
+use ToneflixCode\LaravelPayPocket\Tests\Models\User;
 
 it('can test', function () {
     expect(true)->toBeTrue();

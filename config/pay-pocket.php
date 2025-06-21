@@ -1,6 +1,6 @@
 <?php
 
-// config for HPWebdeveloper/LaravelPayPocket
+// config for ToneflixCode/LaravelPayPocket
 
 return [
 

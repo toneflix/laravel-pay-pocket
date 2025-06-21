@@ -1,9 +1,9 @@
 <?php
 
-namespace HPWebdeveloper\LaravelPayPocket\Traits;
+namespace ToneflixCode\LaravelPayPocket\Traits;
 
-use HPWebdeveloper\LaravelPayPocket\Exceptions\InsufficientBalanceException;
-use HPWebdeveloper\LaravelPayPocket\Models\WalletsLog;
+use ToneflixCode\LaravelPayPocket\Exceptions\InsufficientBalanceException;
+use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
 use Illuminate\Support\Facades\DB;
 
 trait HandlesPayment
@@ -26,7 +26,7 @@ trait HandlesPayment
             $remainingOrderValue = $orderValue;
 
             /**
-             * @var \Illuminate\Support\Collection<TKey, \HPWebdeveloper\LaravelPayPocket\Models\Wallet>
+             * @var \Illuminate\Support\Collection<TKey, \ToneflixCode\LaravelPayPocket\Models\Wallet>
              */
             $walletsInOrder = $this->wallets()->whereIn('type', $this->walletsInOrder())->get();
 
