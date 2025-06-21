@@ -2,9 +2,9 @@
 
 namespace ToneflixCode\LaravelPayPocket\Traits;
 
-use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
 use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
+use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
 
 trait BalanceOperation
 {
@@ -85,6 +85,6 @@ trait BalanceOperation
 
         $reference = call_user_func([$className, $methodName], ...$params);
 
-        return $prefix . $reference;
+        return $prefix.$reference;
     }
 }

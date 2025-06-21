@@ -2,9 +2,9 @@
 
 namespace ToneflixCode\LaravelPayPocket\Tests\Database\Factories;
 
-use ToneflixCode\LaravelPayPocket\Tests\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use ToneflixCode\LaravelPayPocket\Tests\Models\User;
 
 class UserFactory extends Factory
 {

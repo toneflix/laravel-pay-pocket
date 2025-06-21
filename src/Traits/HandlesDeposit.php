@@ -3,10 +3,10 @@
 namespace ToneflixCode\LaravelPayPocket\Traits;
 
 use App\Enums\WalletEnums;
+use Illuminate\Support\Facades\DB;
 use ToneflixCode\LaravelPayPocket\Exceptions\InvalidDepositException;
 use ToneflixCode\LaravelPayPocket\Exceptions\InvalidValueException;
 use ToneflixCode\LaravelPayPocket\Exceptions\InvalidWalletTypeException;
-use Illuminate\Support\Facades\DB;
 
 trait HandlesDeposit
 {

@@ -2,8 +2,8 @@
 
 namespace ToneflixCode\LaravelPayPocket\Facades;
 
-use ToneflixCode\LaravelPayPocket\Interfaces\WalletOperations;
 use Illuminate\Support\Facades\Facade;
+use ToneflixCode\LaravelPayPocket\Interfaces\WalletOperations;
 
 /**
  * @see \ToneflixCode\LaravelPayPocket\Services\PocketServices

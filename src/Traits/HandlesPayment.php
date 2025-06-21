@@ -2,9 +2,9 @@
 
 namespace ToneflixCode\LaravelPayPocket\Traits;
 
+use Illuminate\Support\Facades\DB;
 use ToneflixCode\LaravelPayPocket\Exceptions\InsufficientBalanceException;
 use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
-use Illuminate\Support\Facades\DB;
 
 trait HandlesPayment
 {
