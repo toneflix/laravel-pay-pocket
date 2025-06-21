@@ -4,8 +4,8 @@ namespace App\Enums;
 
 enum WalletEnums: string
 {
-    case WALLET1 = 'wallet_1';
-    case WALLET2 = 'wallet_2';
+    case WALLET_MAIN = 'wallet_main';
+    case WALLET_ESCROW = 'wallet_escrow';
 
     /**
      * Check if a given value is a valid enum case.

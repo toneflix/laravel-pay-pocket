@@ -19,13 +19,13 @@
 
 **Note:** This package does not handle payments from payment platforms, but instead offers the concept of virtual money, deposit, and withdrawal.
 
--   **Author**: Hamed Panjeh|Hamza's Legacy
+-   **Author**: Hamed Panjeh | Hamza's Legacy
 -   **Vendor**: toneflix-code
 -   **Package**: laravel-pay-pocket
 -   **Alias name**: Laravel PPP (Laravel Pay Pocket Package)
 -   **Version**: `3.x`
--   **PHP Version**: 8.1+
--   **Laravel Version**: `10.x`, `11.x`, `12.x`
+-   **PHP Version**: 8.2+
+-   **Laravel Version**: `11.x`, `12.x`
 -   **[Composer](https://getcomposer.org/):** `composer require toneflix-code/laravel-pay-pocket`
 
 ### About This Fork
@@ -136,19 +136,19 @@ namespace App\Enums;
 
 enum WalletEnums: string
 {
-    case WALLET1 = 'wallet_1';
-    case WALLET2 = 'wallet_2';
+    case WALLET_MAIN = 'wallet_main';
+    case WALLET_ESCROW = 'wallet_escrow';
 }
 
 ```
 
 **You have complete freedom to name your wallets as per your requirements and even add more wallet types to the Enum list.**
 
-In this particular setup, `wallet_1` (`WALLET1`) is given the **highest priority**. When an order payment is processed, the system will first attempt to use `wallet_1` to cover the cost. If `wallet_1` does not have sufficient funds, `wallet_2` (`WALLET2`) will be used next.
+In this particular setup, `wallet_main` (`WALLET_MAIN`) is given the **highest priority**. When an order payment is processed, the system will first attempt to use `wallet_main` to cover the cost. If `wallet_main` does not have sufficient funds, `wallet_escrow` (`WALLET_ESCROW`) will be used next.
 
 ### Example:
 
-If the balance in `wallet_1` is 10 and the balance in `wallet_2` is 20, and you need to pay an order value of 15, the payment process will first utilize the entire balance of `wallet_1`. Since `wallet_1`'s balance is insufficient to cover the full amount, the remaining 5 will be deducted from `wallet_2`. After the payment, `wallet_2` will have a remaining balance of 15."
+If the balance in `wallet_main` is 10 and the balance in `wallet_escrow` is 20, and you need to pay an order value of 15, the payment process will first utilize the entire balance of `wallet_main`. Since `wallet_main`'s balance is insufficient to cover the full amount, the remaining 5 will be deducted from `wallet_escrow`. After the payment, `wallet_escrow` will have a remaining balance of 15."
 
 ## Usage, APIs and Operations:
 
@@ -158,18 +158,18 @@ If the balance in `wallet_1` is 10 and the balance in `wallet_2` is 20, and you 
 deposit(type: string, amount: float|int, notes: string null)
 ```
 
-Deposit funds into `wallet_1`
+Deposit funds into `wallet_main`
 
 ```php
 $user = auth()->user();
-$user->deposit('wallet_1', 123.45);
+$user->deposit('wallet_main', 123.45);
 ```
 
-Deposit funds into `wallet_2`
+Deposit funds into `wallet_escrow`
 
 ```php
 $user = auth()->user();
-$user->deposit('wallet_2', 67.89);
+$user->deposit('wallet_escrow', 67.89);
 ```
 
 Or using provided facade
@@ -178,11 +178,11 @@ Or using provided facade
 use ToneflixCode\LaravelPayPocket\Facades\LaravelPayPocket;
 
 $user = auth()->user();
-LaravelPayPocket::deposit($user, 'wallet_1', 123.45);
+LaravelPayPocket::deposit($user, 'wallet_main', 123.45);
 
 ```
 
-Note: `wallet_1` and `wallet_2` must already be defined in the `WalletEnums`.
+Note: `wallet_main` and `wallet_escrow` must already be defined in the `WalletEnums`.
 
 #### Transaction Info ([#8][i8])
 
@@ -190,7 +190,7 @@ When you need to add descriptions for a specific transaction, the `$notes` param
 
 ```php
 $user = auth()->user();
-$user->deposit('wallet_1', 67.89, 'You sold pizza.');
+$user->deposit('wallet_main', 67.89, 'You sold pizza.');
 ```
 
 ### Pay
@@ -223,7 +223,7 @@ Sometimes you want to mark certain wallets as allowed so that when the `pay()` m
 
 ```php
 $user = auth()->user();
-$user->pay(12.34, ['wallet_1']);
+$user->pay(12.34, ['wallet_main']);
 ```
 
 When the `$allowedWallets` param is provided and is not an empty array, the system would attempt to charge only the wallets specified in the array.
@@ -252,12 +252,12 @@ LaravelPayPocket::checkBalance($user);
 -   **Particular Wallet**
 
 ```php
-$user->getWalletBalanceByType('wallet_1') // Balance available in wallet_1
-$user->getWalletBalanceByType('wallet_2') // Balance available in wallet_2
+$user->getWalletBalanceByType('wallet_main') // Balance available in wallet_main
+$user->getWalletBalanceByType('wallet_escrow') // Balance available in wallet_escrow
 
 // Or using provided facade
 
-LaravelPayPocket::walletBalanceByType($user, 'wallet_1');
+LaravelPayPocket::walletBalanceByType($user, 'wallet_main');
 ```
 
 ### Exceptions
