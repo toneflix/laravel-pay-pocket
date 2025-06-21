@@ -1,4 +1,4 @@
-![Laravel Pay Pocket](https://github.com/toneflix/laravel-pay-pocket/assets/16323354/8e8ebcf6-f8d4-4811-b97c-fb6362e3f019)
+![Laravel Pay Pocket](https://github.com/user-attachments/assets/8e8ebcf6-f8d4-4811-b97c-fb6362e3f019)
 
 # Laravel Pay Pocket
 
@@ -6,6 +6,9 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/toneflix/laravel-pay-pocket/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/toneflix/laravel-pay-pocket/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Imports](https://github.com/toneflix/laravel-pay-pocket/actions/workflows/check_imports.yml/badge.svg?branch=main)](https://github.com/toneflix/laravel-pay-pocket/actions/workflows/check_imports.yml)
+[![codecov](https://codecov.io/gh/toneflix/laravel-pay-pocket/graph/badge.svg?token=4A0pTNRHsG)](https://codecov.io/gh/toneflix/laravel-pay-pocket)
+[![Downloads](https://img.shields.io/packagist/dt/hpwebdeveloper/laravel-pay-pocket.svg?style=flat-square&label=<3.x+Downloads)](https://packagist.org/packages/hpwebdeveloper/laravel-pay-pocket)
+[![Total Downloads](https://img.shields.io/packagist/dt/toneflix-code/laravel-pay-pocket.svg?style=flat-square&label=3.x+Downloads)](https://packagist.org/packages/toneflix-code/laravel-pay-pocket)
 
 **Laravel Pay Pocket** is a package designed for Laravel applications, offering the flexibility to manage multiple wallet types within two dedicated database tables, `wallets` and `wallets_logs`.
 
