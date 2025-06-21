@@ -286,6 +286,12 @@ composer test
 ./vender/bin/pest
 ```
 
+## TODO:
+
+-   [ ] Encrypt wallet balances before storage and decrypt during retrieval.
+
+-   [ ] Encrypt wallet amount in logs before storage and decrypt during retrieval.
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
