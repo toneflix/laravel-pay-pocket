@@ -26,6 +26,7 @@ trait BalanceOperation
         return DB::transaction(function () use ($value, $notes) {
             $this->createLog('dec', $value, $notes);
             $this->decrement('balance', $value);
+
             return $this->createdLog;
         });
     }
@@ -38,6 +39,7 @@ trait BalanceOperation
         return DB::transaction(function () use ($value, $notes) {
             $this->createLog('inc', $value, $notes);
             $this->increment('balance', $value);
+
             return $this->createdLog;
         });
     }
@@ -51,7 +53,7 @@ trait BalanceOperation
 
         $newBalance = $logType === 'dec' ? $currentBalance - $value : $currentBalance + $value;
 
-        $walletLog = (new WalletsLog())->fill([
+        $walletLog = (new WalletsLog)->fill([
             'wallet_name' => $this->type->value,
             'from' => $currentBalance,
             'to' => $newBalance,
@@ -77,12 +79,12 @@ trait BalanceOperation
         $params = (array) config('pay-pocket.log_reference_params', [12]);
         $prefix = config('pay-pocket.log_reference_prefix');
 
-        if (!is_callable([$className, $methodName])) {
+        if (! is_callable([$className, $methodName])) {
             throw new InvalidArgumentException('Invalid configuration: The combination of log_reference_generator_class and log_reference_generator_method is not callable.');
         }
 
         $reference = call_user_func([$className, $methodName], ...$params);
 
-        return $prefix . $reference;
+        return $prefix.$reference;
     }
 }
