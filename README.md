@@ -9,8 +9,6 @@
 
 **Laravel Pay Pocket** is a package designed for Laravel applications, offering the flexibility to manage multiple wallet types within two dedicated database tables, `wallets` and `wallets_logs`.
 
-**Demo:** https://github.com/toneflix/demo-pay-pocket
-
 **Videos:**
 
 -   [Laravel Pay Pocket Package: Virtual Wallets in Your Project](https://www.youtube.com/watch?v=KoQyURiwsA4)
@@ -21,14 +19,14 @@
 
 **Note:** This package does not handle payments from payment platforms, but instead offers the concept of virtual money, deposit, and withdrawal.
 
--   **Author**: Hamed Panjeh
--   **Vendor**: hpwebdeveloper
+-   **Author**: Hamed Panjeh|Hamza's Legacy
+-   **Vendor**: toneflix-code
 -   **Package**: laravel-pay-pocket
 -   **Alias name**: Laravel PPP (Laravel Pay Pocket Package)
--   **Version**: `2.x`
+-   **Version**: `3.x`
 -   **PHP Version**: 8.1+
--   **Laravel Version**: `10.x`, `11.x`
--   **[Composer](https://getcomposer.org/):** `composer require hpwebdeveloper/laravel-pay-pocket`
+-   **Laravel Version**: `10.x`, `11.x`, `12.x`
+-   **[Composer](https://getcomposer.org/):** `composer require toneflix-code/laravel-pay-pocket`
 
 ### Support Policy
 
@@ -36,7 +34,7 @@
 | ---------------------------------------------- | ------------ | ------------- | ------------- | ------------------- | -------------- |
 | 1.x                                            | ^10.0        | 8.1, 8.2, 8.3 | Nov 30, 2023  | Mar 1, 2024         |                |
 | 2.x                                            | ^10.0, ^11.0 | 8.2, 8.3      | June 27, 2024 | January 30, 2025    |                |
-| 3.x (atomic operations and restricted wallets) | ^11.0        | 8.2, 8.3      | comming soon  |                     |                |
+| 3.x (atomic operations and restricted wallets) | ^11.0, ^12.0 | 8.2, 8.3, 8.4 | comming soon  |                     |                |
 
 ## Installation:
 
