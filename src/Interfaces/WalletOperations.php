@@ -25,7 +25,7 @@ interface WalletOperations
      * Pay the order value from the user's wallets.
      *
      *
-     * @return \Illuminate\Support\Collection<TKey,\ToneflixCode\LaravelPayPocket\Models\WalletsLog>
+     * @return \Illuminate\Support\Collection<\ToneflixCode\LaravelPayPocket\Models\WalletsLog>
      *
      * @throws InsufficientBalanceException
      */
