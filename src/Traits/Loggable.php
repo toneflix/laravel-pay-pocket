@@ -2,8 +2,8 @@
 
 namespace ToneflixCode\LaravelPayPocket\Traits;
 
-use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
 
 trait Loggable
 {

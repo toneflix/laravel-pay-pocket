@@ -2,10 +2,10 @@
 
 namespace ToneflixCode\LaravelPayPocket\Tests;
 
-use ToneflixCode\LaravelPayPocket\LaravelPayPocketServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as Orchestra;
+use ToneflixCode\LaravelPayPocket\LaravelPayPocketServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -22,16 +22,16 @@ class TestCase extends Orchestra
         $migration->up();
         */
 
-        $migration = include __DIR__ . '/database/migrations/create_users_tables.php';
+        $migration = include __DIR__.'/database/migrations/create_users_tables.php';
         $migration->up();
 
-        $migration = include __DIR__ . '/../database/migrations/create_wallets_logs_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_wallets_logs_table.php.stub';
         $migration->up();
 
-        $migration = include __DIR__ . '/../database/migrations/create_wallets_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_wallets_table.php.stub';
         $migration->up();
 
-        $migration = include __DIR__ . '/../database/migrations/add_notes_and_reference_columns_to_wallets_logs_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/add_notes_and_reference_columns_to_wallets_logs_table.php.stub';
         $migration->up();
     }
 
@@ -46,9 +46,9 @@ class TestCase extends Orchestra
         */
 
         Factory::guessFactoryNamesUsing(
-            fn(string $modelName) => 'ToneflixCode\\LaravelPayPocket\\Tests\\Database\\Factories\\' . class_basename(
+            fn (string $modelName) => 'ToneflixCode\\LaravelPayPocket\\Tests\\Database\\Factories\\'.class_basename(
                 $modelName
-            ) . 'Factory'
+            ).'Factory'
         );
     }
 
