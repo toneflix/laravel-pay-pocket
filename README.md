@@ -271,7 +271,7 @@ you will discover a variety of exceptions tailored to address each scenario of i
 ### Log
 
 A typical `wallets_logs` table.
-![Laravel Pay Pocket Log](https://github.com/toneflix/laravel-pay-pocket/assets/16323354/0d7f2237-88e1-4ac0-a4f2-ac200bad9273)
+![Laravel Pay Pocket Log](https://github.com/user-attachments/assets/0d7f2237-88e1-4ac0-a4f2-ac200bad9273)
 
 ## Testing
 
