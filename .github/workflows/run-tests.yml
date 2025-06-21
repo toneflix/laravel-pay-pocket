@@ -22,7 +22,7 @@ jobs:
           - laravel: 10.*
             testbench: ^8.20
             php: 8.2
-            carbon: ^2.63
+            carbon: ^2.67
           - laravel: 11.*
             testbench: ^9.5
             php: 8.2
