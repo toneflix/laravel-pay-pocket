@@ -2,9 +2,9 @@
 
 # Laravel Pay Pocket
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/hpwebdeveloper/laravel-pay-pocket.svg?style=flat-square)](https://packagist.org/packages/hpwebdeveloper/laravel-pay-pocket)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hpwebdeveloper/laravel-pay-pocket/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hpwebdeveloper/laravel-pay-pocket/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/toneflix-code/laravel-pay-pocket.svg?style=flat-square)](https://packagist.org/packages/toneflix-code/laravel-pay-pocket)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/toneflix/laravel-pay-pocket/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/toneflix/laravel-pay-pocket/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Imports](https://github.com/toneflix/laravel-pay-pocket/actions/workflows/check_imports.yml/badge.svg?branch=main)](https://github.com/toneflix/laravel-pay-pocket/actions/workflows/check_imports.yml)
 
 **Laravel Pay Pocket** is a package designed for Laravel applications, offering the flexibility to manage multiple wallet types within two dedicated database tables, `wallets` and `wallets_logs`.
@@ -28,20 +28,60 @@
 -   **Laravel Version**: `10.x`, `11.x`, `12.x`
 -   **[Composer](https://getcomposer.org/):** `composer require toneflix-code/laravel-pay-pocket`
 
+### About This Fork
+
+This package is a maintained and community-inclusive fork of `hpwebdeveloper/laravel-pay-pocket`.
+
+> **Why Toneflix?** The original repo has seen little to no maintenance in a while, and pull requests with useful features and bug fixes have been neglected. This fork merges all major pending contributions and begins a new, more active journey under `toneflix-code/laravel-pay-pocket`.
+
+### What’s new in 3.x?
+
+-   All important open PRs from the base package are reviewed and merged
+-   Bugs and rough edges smoothed out
+-   Cleaner structure for Laravel apps
+-   Full backward compatibility with the original package (in most cases)
+-   More responsive to issues and contributions
+-   Actively maintained — contributions welcome
+-   Support for Laravel 12.x with up-to-date dependencies
+-   Continued support and versioning going forward
+
+### Migrating?
+
+If you're coming from `hpwebdeveloper/laravel-pay-pocket`, just update your composer.json:
+
+```json
+"require": {
+  "toneflix-code/laravel-pay-pocket": "^3.0"
+}
+```
+
+Run:
+
+```bash
+composer update
+```
+
+Then update your imports:
+
+`- HPWebdeveloper\LaravelPayPocket`  
+`+ ToneflixCode\LaravelPayPocket`
+
+Everything should work as expected. Open a PR if anything breaks.
+
 ### Support Policy
 
 | Version                                        | Laravel      | PHP           | Release date  | End of improvements | End of support |
 | ---------------------------------------------- | ------------ | ------------- | ------------- | ------------------- | -------------- |
-| 1.x                                            | ^10.0        | 8.1, 8.2, 8.3 | Nov 30, 2023  | Mar 1, 2024         |                |
-| 2.x                                            | ^10.0, ^11.0 | 8.2, 8.3      | June 27, 2024 | January 30, 2025    |                |
-| 3.x (atomic operations and restricted wallets) | ^11.0, ^12.0 | 8.2, 8.3, 8.4 | comming soon  |                     |                |
+| 1.x                                            | ^10.0        | 8.1, 8.2, 8.3 | Nov 30, 2023  | Mar 1, 2024         | June 21 2025   |
+| 2.x                                            | ^10.0, ^11.0 | 8.2, 8.3      | June 27, 2024 | January 30, 2025    | June 21 2025   |
+| 3.x (atomic operations and restricted wallets) | ^11.0, ^12.0 | 8.2, 8.3, 8.4 | June 21 2025  | January 29, 2026    |                |
 
 ## Installation:
 
 -   **Step 1:** You can install the package via composer:
 
 ```bash
-composer require hpwebdeveloper/laravel-pay-pocket
+composer require toneflix-code/laravel-pay-pocket
 ```
 
 -   **Step 2:** Publish and run the migrations with:
@@ -64,7 +104,7 @@ This command will automatically publish the `pay-pocket.php` config file and als
 
 ## Updating
 
-If updating to version `^2.0.0`, new migration and config files have been added to support the new [Transaction Notes Feature](#transaction-notes-8)
+If coming from version prior to `^2.0`, new migration and config files have been added to support the new [Transaction Notes Feature](#transaction-notes-8)
 
 Follow the [Installation](#installation) Steps 2 and 3 to update your migrations.
 
