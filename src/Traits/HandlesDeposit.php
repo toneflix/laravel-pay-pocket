@@ -13,6 +13,10 @@ trait HandlesDeposit
     /**
      * Deposit an amount to the user's wallet of a specific type.
      *
+     * @param string $type
+     * @param integer|float $amount
+     * @param string|null $notes
+     *
      * @throws InvalidDepositException
      * @throws InvalidValueException
      * @throws InvalidWalletTypeException

@@ -116,7 +116,7 @@ test('notes can be added during payment', function () {
 
     $description = \Illuminate\Support\Str::random();
     $user->deposit($type, 234.56);
-    $user->pay(234.56, $description);
+    $user->pay(234.56, [$type], $description);
 
     expect(WalletsLog::where('notes', $description)->exists())->toBe(true);
 });
@@ -132,6 +132,7 @@ test('transaction reference is added to wallet log', function () {
 });
 
 test('Payment returns log', function () {
+    /** @var User $user */
     $user = User::factory()->create();
 
     $type = 'wallet_2';
@@ -141,4 +142,21 @@ test('Payment returns log', function () {
     $log = $user->pay(100.16);
 
     expect($log->sum('value'))->toBe(100.16);
+});
+
+test('only the allowed wallets should be charged.', function () {
+    /** @var User $user */
+    $user = User::factory()->create();
+
+    $type = 'wallet_1';
+
+    $user->deposit($type, 234.56);
+    $user->pay(234.56, [$type]);
+
+    $last = $user->wallets()
+        ->where('type', \App\Enums\WalletEnums::WALLET1)
+        ->first()
+        ->logs()->latest()->first();
+
+    expect($last->value)->toBeFloat(234.56);
 });

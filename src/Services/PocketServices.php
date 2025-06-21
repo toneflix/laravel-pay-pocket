@@ -25,9 +25,13 @@ class PocketServices
      * @throws InsufficientBalanceException
      * @return \Illuminate\Support\Collection<TKey,WalletsLog>
      */
-    public function pay(WalletOperations $user, int|float $orderValue, ?string $notes = null): \Illuminate\Support\Collection
-    {
-        return $user->pay($orderValue, $notes);
+    public function pay(
+        WalletOperations $user,
+        int|float $orderValue,
+        array $allowedWallets = [],
+        ?string $notes = null
+    ): \Illuminate\Support\Collection {
+        return $user->pay($orderValue, $allowedWallets, $notes);
     }
 
     /**

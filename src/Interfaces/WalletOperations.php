@@ -30,7 +30,11 @@ interface WalletOperations
      * @throws InsufficientBalanceException
      * @return \Illuminate\Support\Collection<TKey,WalletsLog>
      */
-    public function pay(int|float $orderValue, ?string $notes = null): \Illuminate\Support\Collection;
+    public function pay(
+        int|float $orderValue,
+        array $allowedWallets = [],
+        ?string $notes = null
+    ): \Illuminate\Support\Collection;
 
     /**
      * Deposit an amount to the user's wallet of a specific type.

@@ -17,17 +17,17 @@
 -   **Vendor**: hpwebdeveloper
 -   **Package**: laravel-pay-pocket
 -   **Alias name**: Laravel PPP (Laravel Pay Pocket Package)
--   **Version**: `1.x`
+-   **Version**: `2.x`
 -   **PHP Version**: 8.1+
--   **Laravel Version**: `10.x`
+-   **Laravel Version**: `10.x`, `11.x`
 -   **[Composer](https://getcomposer.org/):** `composer require hpwebdeveloper/laravel-pay-pocket`
 
 ### Support Policy
 
-| Version | Laravel | PHP           | Release date | End of improvements | End of support |
-| ------- | ------- | ------------- | ------------ | ------------------- | -------------- |
-| 1.x     | ^10.0   | 8.1, 8.2, 8.3 | Nov 30, 2023 | Mar 1, 2024         |                |
-| x.x     |         |               |              |                     |                |
+| Version | Laravel      | PHP         | Release date  | End of improvements | End of support |
+|---------|--------------|-------------|---------------|---------------------| -------------- |
+| 1.x     | ^10.0        | 8.1, 8.2, 8.3 | Nov 30, 2023  | Mar 1, 2024         |                |
+| 2.x     | ^10.0, ^11.0 |8.2, 8.3| June 27, 2024 | January 30, 2025    |                |
 
 ## Installation:
 
@@ -108,7 +108,7 @@ If the balance in `wallet_1` is 10 and the balance in `wallet_2` is 20, and you 
 ### Deposit
 
 ```php
-deposit(type: 'wallet_1', amount: 123.45, notes: null)
+deposit(type: string, amount: float|int, notes: string null)
 ```
 
 Deposit funds into `wallet_1`
@@ -143,13 +143,13 @@ When you need to add descriptions for a specific transaction, the `$notes` param
 
 ```php
 $user = auth()->user();
-$user->deposit('wallet_1', 67.89, 'You ordered pizza.');
+$user->deposit('wallet_1', 67.89, 'You sold pizza.');
 ```
 
 ### Pay
 
 ```php
-pay(amount: 12.34, notes: null)
+pay(amount: int, allowedWallets: array [], notes: string null)
 ```
 
 Pay the value using the total combined balance available across all allowed wallets
@@ -166,6 +166,28 @@ use HPWebdeveloper\LaravelPayPocket\Facades\LaravelPayPocket;
 
 $user = auth()->user();
 LaravelPayPocket::pay($user, 12.34);
+```
+
+By default the sytem will attempt to pay using all available wallets unless the `allowedWallets` param is provided.
+
+#### Allowed Wallets ([#8][i8])
+
+Sometimes you want to mark certain wallets as allowed so that when the `pay()` method is called, the system does not attempt to charge other wallets, a possible use case is an escrow system, the `$allowedWallets` param of the pay method allows you to do just that.
+
+```php
+$user = auth()->user();
+$user->pay(12.34, ['wallet_1']);
+```
+
+When the `$allowedWallets` param is provided and is not an empty array, the system would attempt to charge only the wallets specified in the array.
+
+#### Transaction Notes ([#8][i8])
+
+In a case where you want to enter descriptions for a particular transaction, the `$note` param allows you to provide information about why a transaction happened.
+
+```php
+$user = auth()->user();
+$user->pay(12.34, [], 'You ordered pizza.');
 ```
 
 ### Balance
