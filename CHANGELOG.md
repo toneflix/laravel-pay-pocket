@@ -2,6 +2,26 @@
 
 All notable changes to `laravel-pay-pocket` will be documented in this file.
 
+## 3.0.0 - 2025-06-21
+
+### What's Changed
+
+* New divergence to preserve project maintainability by @3m1n3nc3 in https://github.com/toneflix/laravel-pay-pocket/pull/1
+* All important open PRs from the base package are reviewed and merged
+* Bugs and rough edges smoothed out
+* Cleaner structure for Laravel apps
+* Full backward compatibility with the original package (in most cases)
+* More responsive to issues and contributions
+* Actively maintained — contributions welcome
+* Support for Laravel 12.x with up-to-date dependencies
+* Continued support and versioning going forward
+
+### New Contributors
+
+* @3m1n3nc3 made their first contribution in https://github.com/toneflix/laravel-pay-pocket/pull/1
+
+**Full Changelog**: https://github.com/toneflix/laravel-pay-pocket/commits/3.0.0
+
 ## 2.2.0 - 2024-06-27
 
 ### What's Changed
