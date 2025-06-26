@@ -16,6 +16,7 @@ class TransactionCompleted
      * Create a new event instance.
      */
     public function __construct(
+        public string $type,
         public Wallet $wallet,
         public WalletsLog $log,
     ) {}
