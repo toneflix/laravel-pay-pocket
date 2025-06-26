@@ -19,6 +19,6 @@ test('dispatches events', function () {
 
     // Assert that an event was dispatched...
     Event::assertDispatched(function (TransactionCompleted $event) {
-        return $event->type === 'inc';
+        return $event->type === 'inc' && $event->value === 234.56;
     });
 });
