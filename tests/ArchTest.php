@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
+use ToneflixCode\LaravelPayPocket\Tests\Models\User;
 use ToneflixCode\LaravelPayPocket\Events\TransactionCompleted;
 
 it('will not use debugging functions')
