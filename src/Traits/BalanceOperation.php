@@ -30,6 +30,7 @@ trait BalanceOperation
 
             TransactionCompleted::dispatch(
                 'dec',
+                $value,
                 $this,
                 $this->createdLog
             );
@@ -49,6 +50,7 @@ trait BalanceOperation
 
             TransactionCompleted::dispatch(
                 'inc',
+                $value,
                 $this,
                 $this->createdLog
             );
