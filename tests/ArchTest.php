@@ -14,7 +14,7 @@ test('dispatches events', function () {
     $user = User::factory()->create();
 
     // Perform wallet update...
-    $type = 'main_wallet';
+    $type = 'wallet_main';
     $user->deposit($type, 234.56);
 
     // Assert that an event was dispatched...
