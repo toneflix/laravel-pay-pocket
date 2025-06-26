@@ -277,10 +277,9 @@ use ToneflixCode\LaravelPayPocket\Events\TransactionCompleted;
 Event::listen(TransactionCompleted::class, function ($event) {
     // Access event data
     $event->type;   // 'inc' or 'dec'
+    $event->value;  // int|float The amount sent
     $event->wallet; // Wallet instance
     $event->log;    // WalletLog instance
-    $event->user;   // User instance
-    $event->amount; // float 
 });
 ```
 
