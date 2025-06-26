@@ -2,11 +2,11 @@
 
 namespace ToneflixCode\LaravelPayPocket\Events;
 
-use ToneflixCode\LaravelPayPocket\Models\Wallet;
-use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use ToneflixCode\LaravelPayPocket\Models\Wallet;
+use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
 
 class OrderShipped
 {
