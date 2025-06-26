@@ -8,7 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use ToneflixCode\LaravelPayPocket\Models\Wallet;
 use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
 
-class OrderShipped
+class TransactionCompleted
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
