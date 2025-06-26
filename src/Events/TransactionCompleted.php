@@ -17,6 +17,7 @@ class TransactionCompleted
      */
     public function __construct(
         public string $type,
+        public int|float $value,
         public Wallet $wallet,
         public WalletsLog $log,
     ) {}
