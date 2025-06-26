@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-pay-pocket` will be documented in this file.
 
+## 3.0.1 - 2025-06-26
+
+### What's Changed
+
+* Feat/add wallet events by @3m1n3nc3 in https://github.com/toneflix/laravel-pay-pocket/pull/3
+
+**Full Changelog**: https://github.com/toneflix/laravel-pay-pocket/compare/3.0.0...3.0.1
+
 ## 3.0.0 - 2025-06-21
 
 ### What's Changed
