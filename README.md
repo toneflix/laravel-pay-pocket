@@ -263,6 +263,28 @@ $user->getWalletBalanceByType('wallet_escrow') // Balance available in wallet_es
 LaravelPayPocket::walletBalanceByType($user, 'wallet_main');
 ```
 
+### Events
+
+During key moments in wallet operations, events will be dispatched so you can hook into it and perform additions tasks.
+
+#### `TransactionCompleted`
+
+Dispatched after a successful deposit or payment action.
+
+```
+use ToneflixCode\LaravelPayPocket\Events\TransactionCompleted;
+
+Event::listen(TransactionCompleted::class, function ($event) {
+    // Access event data
+    $event->type;   // 'inc' or 'dec'
+    $event->value;  // int|float The amount sent
+    $event->wallet; // Wallet instance
+    $event->log;    // WalletLog instance
+});
+```
+
+You can listen to this event to trigger notifications, logs, or any custom logic after wallet operations.
+
 ### Exceptions
 
 Upon examining the `src/Exceptions` directory within the source code,
