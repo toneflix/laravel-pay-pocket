@@ -5,6 +5,7 @@ namespace ToneflixCode\LaravelPayPocket\Traits;
 use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
 use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
+use ToneflixCode\LaravelPayPocket\Events\TransactionCompleted;
 
 trait BalanceOperation
 {
@@ -27,6 +28,12 @@ trait BalanceOperation
             $this->createLog('dec', $value, $notes);
             $this->decrement('balance', $value);
 
+            TransactionCompleted::dispatch(
+                'dec',
+                $this,
+                $this->createdLog
+            );
+            
             return $this->createdLog;
         });
     }
@@ -40,6 +47,12 @@ trait BalanceOperation
             $this->createLog('inc', $value, $notes);
             $this->increment('balance', $value);
 
+            TransactionCompleted::dispatch(
+                'inc',
+                $this,
+                $this->createdLog
+            );
+            
             return $this->createdLog;
         });
     }
