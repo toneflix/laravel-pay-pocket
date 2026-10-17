@@ -1,6 +1,6 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Commands;
+namespace Toneflix\LaravelPayPocket\Commands;
 
 use Illuminate\Console\Command;
 

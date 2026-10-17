@@ -1,12 +1,12 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Events;
+namespace Toneflix\LaravelPayPocket\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use ToneflixCode\LaravelPayPocket\Models\Wallet;
-use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
+use Toneflix\LaravelPayPocket\Models\Wallet;
+use Toneflix\LaravelPayPocket\Models\WalletsLog;
 
 class TransactionCompleted
 {

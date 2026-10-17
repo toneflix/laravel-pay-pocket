@@ -1,6 +1,6 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Traits;
+namespace Toneflix\LaravelPayPocket\Traits;
 
 use App\Enums\WalletEnums;
 

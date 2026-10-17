@@ -16,7 +16,7 @@
     backupStaticProperties="false"
 >
     <testsuites>
-        <testsuite name="ToneflixCode Test Suite">
+        <testsuite name="Toneflix Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

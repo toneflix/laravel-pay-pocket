@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use ToneflixCode\LaravelPayPocket\Events\TransactionCompleted;
-use ToneflixCode\LaravelPayPocket\Tests\Models\User;
+use Toneflix\LaravelPayPocket\Events\TransactionCompleted;
+use Toneflix\LaravelPayPocket\Tests\Models\User;
 
 it('will not use debugging functions')
     ->expect(['dd', 'dump', 'ray'])

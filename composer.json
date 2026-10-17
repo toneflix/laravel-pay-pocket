@@ -1,14 +1,13 @@
 {
-    "name": "toneflix-code/laravel-pay-pocket",
+    "name": "toneflix/laravel-pay-pocket",
     "description": "A multi-wallet Laravel package with comprehensive logging and payments capabilities.",
     "keywords": [
         "3m1n3nc3",
         "Legacy",
         "Hamed Panjeh",
         "laravel",
+        "laravel 13",
         "laravel 12",
-        "laravel 11",
-        "laravel 10",
         "wallet",
         "laravel-pay-pocket"
     ],
@@ -28,34 +27,34 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.3|^8.4",
         "spatie/laravel-package-tools": "^1.14.0",
-        "illuminate/contracts": "^10.0 || ^11.0 || ^12.0"
+        "illuminate/contracts": "^12.0|^13.0"
     },
     "require-dev": {
-        "larastan/larastan": "^2.10 || ^3.0",
+        "larastan/larastan": "^3.0",
         "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.8 || ^8.3",
-        "orchestra/testbench": "^8.20 || ^10.0",
-        "pestphp/pest": "^2.20 || ^3.7",
-        "pestphp/pest-plugin-arch": "^2.0 || ^3.0",
-        "pestphp/pest-plugin-laravel": "^2.0 || ^3.1",
+        "nunomaduro/collision": "^8.6",
+        "orchestra/testbench": "^10.11|^11.1",
+        "pestphp/pest": "^4.4",
+        "pestphp/pest-plugin-arch": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.1",
         "phpstan/extension-installer": "^1.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0 || ^2.0",
-        "phpstan/phpstan-phpunit": "^1.0 || ^2.0",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
         "imanghafoori/php-imports-analyzer": "1.0.*",
         "spatie/laravel-ray": "^1.26"
     },
     "autoload": {
         "psr-4": {
-            "ToneflixCode\\LaravelPayPocket\\": "src/",
-            "ToneflixCode\\LaravelPayPocket\\Database\\Factories\\": "database/factories/",
-            "ToneflixCode\\LaravelPayPocket\\Tests\\Database\\Factories\\": "tests/database/factories"
+            "Toneflix\\LaravelPayPocket\\": "src/",
+            "Toneflix\\LaravelPayPocket\\Database\\Factories\\": "database/factories/",
+            "Toneflix\\LaravelPayPocket\\Tests\\Database\\Factories\\": "tests/database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ToneflixCode\\LaravelPayPocket\\Tests\\": "tests/",
+            "Toneflix\\LaravelPayPocket\\Tests\\": "tests/",
             "App\\Enums\\": "Enums/",
             "Workbench\\App\\": "workbench/app/"
         }
@@ -88,10 +87,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ToneflixCode\\LaravelPayPocket\\LaravelPayPocketServiceProvider"
+                "Toneflix\\LaravelPayPocket\\LaravelPayPocketServiceProvider"
             ],
             "aliases": {
-                "LaravelPayPocket": "ToneflixCode\\LaravelPayPocket\\Facades\\LaravelPayPocket"
+                "LaravelPayPocket": "Toneflix\\LaravelPayPocket\\Facades\\LaravelPayPocket"
             }
         }
     },

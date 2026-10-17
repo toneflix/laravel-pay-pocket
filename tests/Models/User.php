@@ -1,13 +1,13 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Tests\Models;
+namespace Toneflix\LaravelPayPocket\Tests\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use ToneflixCode\LaravelPayPocket\Interfaces\WalletOperations;
-use ToneflixCode\LaravelPayPocket\Traits\ManagesWallet;
+use Toneflix\LaravelPayPocket\Interfaces\WalletOperations;
+use Toneflix\LaravelPayPocket\Traits\ManagesWallet;
 
 class User extends Authenticatable implements WalletOperations
 {

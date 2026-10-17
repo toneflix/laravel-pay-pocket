@@ -1,6 +1,6 @@
 <?php
 
-// config for ToneflixCode/LaravelPayPocket
+// config for Toneflix/LaravelPayPocket
 
 return [
 

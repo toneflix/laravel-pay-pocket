@@ -1,8 +1,8 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Interfaces;
+namespace Toneflix\LaravelPayPocket\Interfaces;
 
-use ToneflixCode\LaravelPayPocket\Exceptions\InsufficientBalanceException;
+use Toneflix\LaravelPayPocket\Exceptions\InsufficientBalanceException;
 
 interface WalletOperations
 {
@@ -25,7 +25,7 @@ interface WalletOperations
      * Pay the order value from the user's wallets.
      *
      *
-     * @return \Illuminate\Support\Collection<\ToneflixCode\LaravelPayPocket\Models\WalletsLog>
+     * @return \Illuminate\Support\Collection<\Toneflix\LaravelPayPocket\Models\WalletsLog>
      *
      * @throws InsufficientBalanceException
      */

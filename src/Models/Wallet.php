@@ -1,16 +1,16 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Models;
+namespace Toneflix\LaravelPayPocket\Models;
 
 use App\Enums\WalletEnums;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use ToneflixCode\LaravelPayPocket\Traits\BalanceOperation;
-use ToneflixCode\LaravelPayPocket\Traits\Loggable;
+use Toneflix\LaravelPayPocket\Traits\BalanceOperation;
+use Toneflix\LaravelPayPocket\Traits\Loggable;
 
 /**
- * ToneflixCode\LaravelPayPocket\Models\Wallet
+ * Toneflix\LaravelPayPocket\Models\Wallet
  *
  * @property mixed $balance
  * @property WalletEnums $type

@@ -1,10 +1,10 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Tests\Database\Factories;
+namespace Toneflix\LaravelPayPocket\Tests\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use ToneflixCode\LaravelPayPocket\Tests\Models\User;
+use Toneflix\LaravelPayPocket\Tests\Models\User;
 
 class UserFactory extends Factory
 {

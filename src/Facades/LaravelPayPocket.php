@@ -1,12 +1,12 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Facades;
+namespace Toneflix\LaravelPayPocket\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use ToneflixCode\LaravelPayPocket\Interfaces\WalletOperations;
+use Toneflix\LaravelPayPocket\Interfaces\WalletOperations;
 
 /**
- * @see \ToneflixCode\LaravelPayPocket\Services\PocketServices
+ * @see \Toneflix\LaravelPayPocket\Services\PocketServices
  *
  * @method static \Illuminate\Support\Collection pay(WalletOperations $user, int|float $orderValue, array $allowedWallets = [], ?string $notes = null)
  * @method static bool deposit(WalletOperations $user, string $type, int|float $amount, ?string $notes = null)
@@ -17,6 +17,6 @@ class LaravelPayPocket extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \ToneflixCode\LaravelPayPocket\Services\PocketServices::class;
+        return \Toneflix\LaravelPayPocket\Services\PocketServices::class;
     }
 }

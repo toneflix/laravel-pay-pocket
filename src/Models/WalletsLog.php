@@ -1,13 +1,13 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Models;
+namespace Toneflix\LaravelPayPocket\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
- * ToneflixCode\LaravelPayPocket\Models\WalletsLog
+ * Toneflix\LaravelPayPocket\Models\WalletsLog
  *
  * @property string $status
  * @property int|float $from

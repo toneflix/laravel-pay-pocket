@@ -1,11 +1,11 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Traits;
+namespace Toneflix\LaravelPayPocket\Traits;
 
 use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
-use ToneflixCode\LaravelPayPocket\Events\TransactionCompleted;
-use ToneflixCode\LaravelPayPocket\Models\WalletsLog;
+use Toneflix\LaravelPayPocket\Events\TransactionCompleted;
+use Toneflix\LaravelPayPocket\Models\WalletsLog;
 
 trait BalanceOperation
 {

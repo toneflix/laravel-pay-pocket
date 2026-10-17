@@ -2,13 +2,13 @@
 
 # Laravel Pay Pocket
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/toneflix-code/laravel-pay-pocket.svg?style=flat-square)](https://packagist.org/packages/toneflix-code/laravel-pay-pocket)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/toneflix/laravel-pay-pocket.svg?style=flat-square)](https://packagist.org/packages/toneflix/laravel-pay-pocket)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/toneflix/laravel-pay-pocket/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/toneflix/laravel-pay-pocket/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/toneflix/laravel-pay-pocket/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Imports](https://github.com/toneflix/laravel-pay-pocket/actions/workflows/check_imports.yml/badge.svg?branch=main)](https://github.com/toneflix/laravel-pay-pocket/actions/workflows/check_imports.yml)
 [![codecov](https://codecov.io/gh/toneflix/laravel-pay-pocket/graph/badge.svg?token=4A0pTNRHsG)](https://codecov.io/gh/toneflix/laravel-pay-pocket)
 [![Downloads](https://img.shields.io/packagist/dt/hpwebdeveloper/laravel-pay-pocket.svg?style=flat-square&label=<3.x+Downloads)](https://packagist.org/packages/hpwebdeveloper/laravel-pay-pocket)
-[![Total Downloads](https://img.shields.io/packagist/dt/toneflix-code/laravel-pay-pocket.svg?style=flat-square&label=3.x+Downloads)](https://packagist.org/packages/toneflix-code/laravel-pay-pocket)
+[![Total Downloads](https://img.shields.io/packagist/dt/toneflix/laravel-pay-pocket.svg?style=flat-square&label=3.x+Downloads)](https://packagist.org/packages/toneflix/laravel-pay-pocket)
 
 **Laravel Pay Pocket** is a package designed for Laravel applications, offering the flexibility to manage multiple wallet types within two dedicated database tables, `wallets` and `wallets_logs`.
 
@@ -23,19 +23,19 @@
 **Note:** This package does not handle payments from payment platforms, but instead offers the concept of virtual money, deposit, and withdrawal.
 
 -   **Author**: Hamed Panjeh | Hamza's Legacy
--   **Vendor**: toneflix-code
+-   **Vendor**: toneflix
 -   **Package**: laravel-pay-pocket
 -   **Alias name**: Laravel PPP (Laravel Pay Pocket Package)
--   **Version**: `3.x`
--   **PHP Version**: 8.2+
--   **Laravel Version**: `11.x`, `12.x`
--   **[Composer](https://getcomposer.org/):** `composer require toneflix-code/laravel-pay-pocket`
+-   **Version**: `4.x`
+-   **PHP Version**: 8.3+
+-   **Laravel Version**: `12.x`, `13.x`
+-   **[Composer](https://getcomposer.org/):** `composer require toneflix/laravel-pay-pocket`
 
 ### About This Fork
 
 This package is a maintained and community-inclusive fork of `hpwebdeveloper/laravel-pay-pocket`.
 
-> **Why Toneflix?** The original repo has seen little to no maintenance in a while, and pull requests with useful features and bug fixes have been neglected. This fork merges all major pending contributions and begins a new, more active journey under `toneflix-code/laravel-pay-pocket`.
+> **Why Toneflix?** The original repo has seen little to no maintenance in a while, and pull requests with useful features and bug fixes have been neglected. This fork merges all major pending contributions and begins a new, more active journey under `toneflix/laravel-pay-pocket`.
 
 ### What’s new in 3.x?
 
@@ -54,7 +54,7 @@ If you're coming from `hpwebdeveloper/laravel-pay-pocket`, just update your comp
 
 ```json
 "require": {
-  "toneflix-code/laravel-pay-pocket": "^3.0"
+  "toneflix/laravel-pay-pocket": "^4.0"
 }
 ```
 
@@ -67,7 +67,7 @@ composer update
 Then update your imports:
 
 `- HPWebdeveloper\LaravelPayPocket`  
-`+ ToneflixCode\LaravelPayPocket`
+`+ Toneflix\LaravelPayPocket`
 
 Everything should work as expected. Open a PR if anything breaks.
 
@@ -84,7 +84,7 @@ Everything should work as expected. Open a PR if anything breaks.
 -   **Step 1:** You can install the package via composer:
 
 ```bash
-composer require toneflix-code/laravel-pay-pocket
+composer require toneflix/laravel-pay-pocket
 ```
 
 -   **Step 2:** Publish and run the migrations with:
@@ -119,8 +119,8 @@ To use this package you need to implement the `WalletOperations` into `User` mod
 
 ```php
 
-use ToneflixCode\LaravelPayPocket\Interfaces\WalletOperations;
-use ToneflixCode\LaravelPayPocket\Traits\ManagesWallet;
+use Toneflix\LaravelPayPocket\Interfaces\WalletOperations;
+use Toneflix\LaravelPayPocket\Traits\ManagesWallet;
 
 class User extends Authenticatable implements WalletOperations
 {
@@ -178,7 +178,7 @@ $user->deposit('wallet_escrow', 67.89);
 Or using provided facade
 
 ```php
-use ToneflixCode\LaravelPayPocket\Facades\LaravelPayPocket;
+use Toneflix\LaravelPayPocket\Facades\LaravelPayPocket;
 
 $user = auth()->user();
 LaravelPayPocket::deposit($user, 'wallet_main', 123.45);
@@ -212,7 +212,7 @@ $user->pay(12.34);
 Or using provided facade
 
 ```php
-use ToneflixCode\LaravelPayPocket\Facades\LaravelPayPocket;
+use Toneflix\LaravelPayPocket\Facades\LaravelPayPocket;
 
 $user = auth()->user();
 LaravelPayPocket::pay($user, 12.34);
@@ -272,7 +272,7 @@ During key moments in wallet operations, events will be dispatched so you can ho
 Dispatched after a successful deposit or payment action.
 
 ```
-use ToneflixCode\LaravelPayPocket\Events\TransactionCompleted;
+use Toneflix\LaravelPayPocket\Events\TransactionCompleted;
 
 Event::listen(TransactionCompleted::class, function ($event) {
     // Access event data

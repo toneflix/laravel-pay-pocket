@@ -1,9 +1,9 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Services;
+namespace Toneflix\LaravelPayPocket\Services;
 
-use ToneflixCode\LaravelPayPocket\Exceptions\InsufficientBalanceException;
-use ToneflixCode\LaravelPayPocket\Interfaces\WalletOperations;
+use Toneflix\LaravelPayPocket\Exceptions\InsufficientBalanceException;
+use Toneflix\LaravelPayPocket\Interfaces\WalletOperations;
 
 class PocketServices
 {
@@ -19,7 +19,7 @@ class PocketServices
      * Pay the order value from the user's wallets.
      *
      *
-     * @return \Illuminate\Support\Collection<\ToneflixCode\LaravelPayPocket\Models\WalletsLog>
+     * @return \Illuminate\Support\Collection<\Toneflix\LaravelPayPocket\Models\WalletsLog>
      *
      * @throws InsufficientBalanceException
      */

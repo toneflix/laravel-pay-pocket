@@ -1,10 +1,10 @@
 <?php
 
-use ToneflixCode\LaravelPayPocket\Exceptions\InsufficientBalanceException;
-use ToneflixCode\LaravelPayPocket\Exceptions\InvalidValueException;
-use ToneflixCode\LaravelPayPocket\Exceptions\InvalidWalletTypeException;
-use ToneflixCode\LaravelPayPocket\Exceptions\WalletNotFoundException;
-use ToneflixCode\LaravelPayPocket\Tests\Models\User;
+use Toneflix\LaravelPayPocket\Exceptions\InsufficientBalanceException;
+use Toneflix\LaravelPayPocket\Exceptions\InvalidValueException;
+use Toneflix\LaravelPayPocket\Exceptions\InvalidWalletTypeException;
+use Toneflix\LaravelPayPocket\Exceptions\WalletNotFoundException;
+use Toneflix\LaravelPayPocket\Tests\Models\User;
 
 test('deposit invalid value (0) should throw exception', function () {
     $user = User::factory()->create();

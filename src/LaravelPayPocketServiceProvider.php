@@ -1,6 +1,6 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket;
+namespace Toneflix\LaravelPayPocket;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

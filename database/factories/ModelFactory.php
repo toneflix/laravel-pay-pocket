@@ -1,6 +1,6 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Database\Factories;
+namespace Toneflix\LaravelPayPocket\Database\Factories;
 
 // use Illuminate\Database\Eloquent\Factories\Factory;
 

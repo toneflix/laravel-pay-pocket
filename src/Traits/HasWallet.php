@@ -1,12 +1,12 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Traits;
+namespace Toneflix\LaravelPayPocket\Traits;
 
 use App\Enums\WalletEnums;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use ToneflixCode\LaravelPayPocket\Exceptions\InvalidWalletTypeException;
-use ToneflixCode\LaravelPayPocket\Exceptions\WalletNotFoundException;
-use ToneflixCode\LaravelPayPocket\Models\Wallet;
+use Toneflix\LaravelPayPocket\Exceptions\InvalidWalletTypeException;
+use Toneflix\LaravelPayPocket\Exceptions\WalletNotFoundException;
+use Toneflix\LaravelPayPocket\Models\Wallet;
 
 trait HasWallet
 {

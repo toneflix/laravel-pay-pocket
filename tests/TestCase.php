@@ -1,11 +1,11 @@
 <?php
 
-namespace ToneflixCode\LaravelPayPocket\Tests;
+namespace Toneflix\LaravelPayPocket\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as Orchestra;
-use ToneflixCode\LaravelPayPocket\LaravelPayPocketServiceProvider;
+use Toneflix\LaravelPayPocket\LaravelPayPocketServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -41,12 +41,12 @@ class TestCase extends Orchestra
 
         /*
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'ToneflixCode\\LaravelPayPocket\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Toneflix\\LaravelPayPocket\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
         */
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'ToneflixCode\\LaravelPayPocket\\Tests\\Database\\Factories\\'.class_basename(
+            fn (string $modelName) => 'Toneflix\\LaravelPayPocket\\Tests\\Database\\Factories\\'.class_basename(
                 $modelName
             ).'Factory'
         );

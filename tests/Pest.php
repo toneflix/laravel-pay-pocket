@@ -1,5 +1,5 @@
 <?php
 
-use ToneflixCode\LaravelPayPocket\Tests\TestCase;
+use Toneflix\LaravelPayPocket\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
