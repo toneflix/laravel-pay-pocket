@@ -2,7 +2,9 @@
 
 namespace Toneflix\LaravelPayPocket\Interfaces;
 
+use Illuminate\Support\Collection;
 use Toneflix\LaravelPayPocket\Exceptions\InsufficientBalanceException;
+use Toneflix\LaravelPayPocket\Models\WalletsLog;
 
 interface WalletOperations
 {
@@ -25,7 +27,7 @@ interface WalletOperations
      * Pay the order value from the user's wallets.
      *
      *
-     * @return \Illuminate\Support\Collection<\Toneflix\LaravelPayPocket\Models\WalletsLog>
+     * @return Collection<WalletsLog>
      *
      * @throws InsufficientBalanceException
      */
@@ -33,7 +35,7 @@ interface WalletOperations
         int|float $orderValue,
         array $allowedWallets = [],
         ?string $notes = null
-    ): \Illuminate\Support\Collection;
+    ): Collection;
 
     /**
      * Deposit an amount to the user's wallet of a specific type.

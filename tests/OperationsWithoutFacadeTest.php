@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\WalletEnums;
+use Illuminate\Support\Str;
 use Toneflix\LaravelPayPocket\Models\WalletsLog;
 use Toneflix\LaravelPayPocket\Tests\Models\User;
 
@@ -103,7 +105,7 @@ test('notes can be added during deposit', function () {
 
     $type = 'wallet_escrow';
 
-    $description = \Illuminate\Support\Str::random();
+    $description = Str::random();
     $user->deposit($type, 234.56, $description);
 
     expect(WalletsLog::where('notes', $description)->exists())->toBe(true);
@@ -114,7 +116,7 @@ test('notes can be added during payment', function () {
 
     $type = 'wallet_escrow';
 
-    $description = \Illuminate\Support\Str::random();
+    $description = Str::random();
     $user->deposit($type, 234.56);
     $user->pay(234.56, [$type], $description);
 
@@ -154,7 +156,7 @@ test('only the allowed wallets should be charged.', function () {
     $user->pay(234.56, [$type]);
 
     $last = $user->wallets()
-        ->where('type', \App\Enums\WalletEnums::WALLET_MAIN)
+        ->where('type', WalletEnums::WALLET_MAIN)
         ->first()
         ->logs()->latest()->first();
 

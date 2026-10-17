@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 // config for Toneflix/LaravelPayPocket
 
 return [
@@ -24,6 +26,6 @@ return [
 
     'log_reference_params' => [12],
     'log_reference_prefix' => '',
-    'log_reference_generator_class' => Illuminate\Support\Str::class,
+    'log_reference_generator_class' => Str::class,
     'log_reference_generator_method' => 'random',
 ];

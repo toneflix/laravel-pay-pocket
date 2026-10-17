@@ -2,8 +2,11 @@
 
 namespace Toneflix\LaravelPayPocket\Traits;
 
+use App\Enums\WalletEnums;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Toneflix\LaravelPayPocket\Exceptions\InsufficientBalanceException;
+use Toneflix\LaravelPayPocket\Models\Wallet;
 use Toneflix\LaravelPayPocket\Models\WalletsLog;
 
 trait HandlesPayment
@@ -12,7 +15,7 @@ trait HandlesPayment
      * Pay the order value from the user's wallets.
      *
      * @param  string[]  $allowedWallets
-     * @return \Illuminate\Support\Collection<TKey,WalletsLog>
+     * @return Collection<TKey,WalletsLog>
      *
      * @throws InsufficientBalanceException
      */
@@ -26,17 +29,17 @@ trait HandlesPayment
             $remainingOrderValue = $orderValue;
 
             /**
-             * @var \Illuminate\Support\Collection<TKey, \Toneflix\LaravelPayPocket\Models\Wallet>
+             * @var Collection<TKey, Wallet>
              */
             $walletsInOrder = $this->wallets()->whereIn('type', $this->walletsInOrder())->get();
 
             $logs = (new WalletsLog)->newCollection();
 
             /**
-             * @param string|\App\Enums\WalletEnums
+             * @param string|WalletEnums
              * @return bool $useWallet
              * */
-            $useWallet = function (string|\App\Enums\WalletEnums $wallet) use ($allowedWallets) {
+            $useWallet = function (string|WalletEnums $wallet) use ($allowedWallets) {
                 return count($allowedWallets) < 1 ||
                     in_array($wallet, $allowedWallets) ||
                     in_array($wallet->value, $allowedWallets);
