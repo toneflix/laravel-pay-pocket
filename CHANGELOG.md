@@ -2,6 +2,29 @@
 
 All notable changes to `laravel-pay-pocket` will be documented in this file.
 
+## 4.0.0 - 2026-10-17
+
+### What's Changed
+
+feat: add Laravel 13 support and move to the toneflix vendor
+
+- Renamed the package from `toneflix-code/laravel-pay-pocket` to `toneflix/laravel-pay-pocket`
+- Renamed the namespace from `ToneflixCode\LaravelPayPocket` to `Toneflix\LaravelPayPocket`
+- Require PHP `^8.3|^8.4` and Illuminate `^12.0|^13.0`
+- Upgraded dev tooling to Testbench `^10.11|^11.1` and Pest `^4`
+- Updated the README and CI matrix for Laravel 12 and 13
+
+#### Upgrading
+
+```bash
+composer remove toneflix-code/laravel-pay-pocket
+composer require toneflix/laravel-pay-pocket:^4.0
+
+```
+Then replace `ToneflixCode\LaravelPayPocket` with `Toneflix\LaravelPayPocket` in your imports and published config. This release requires Laravel 12 or 13 and PHP 8.3 or later.
+
+**Full Changelog**: https://github.com/toneflix/laravel-pay-pocket/compare/3.0.1...4.0.0
+
 ## 3.0.1 - 2025-06-26
 
 ### What's Changed
