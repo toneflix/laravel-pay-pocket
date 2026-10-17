@@ -1,0 +1,37 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Property Toneflix\\LaravelPayPocket\\Models\\Wallet\:\:\$createdLog \(Toneflix\\LaravelPayPocket\\Models\\WalletsLog\) does not accept Illuminate\\Database\\Eloquent\\Model\|false\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/Models/Wallet.php
+
+		-
+			message: '#^Trait Toneflix\\LaravelPayPocket\\Traits\\GetWallets is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Traits/GetWallets.php
+
+		-
+			message: '#^Trait Toneflix\\LaravelPayPocket\\Traits\\HandlesDeposit is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Traits/HandlesDeposit.php
+
+		-
+			message: '#^Trait Toneflix\\LaravelPayPocket\\Traits\\HandlesPayment is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Traits/HandlesPayment.php
+
+		-
+			message: '#^Trait Toneflix\\LaravelPayPocket\\Traits\\HasWallet is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Traits/HasWallet.php
+
+		-
+			message: '#^Trait Toneflix\\LaravelPayPocket\\Traits\\ManagesWallet is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Traits/ManagesWallet.php
