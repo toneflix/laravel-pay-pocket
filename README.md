@@ -77,7 +77,8 @@ Everything should work as expected. Open a PR if anything breaks.
 | ---------------------------------------------- | ------------ | ------------- | ------------- | ------------------- | -------------- |
 | 1.x                                            | ^10.0        | 8.1, 8.2, 8.3 | Nov 30, 2023  | Mar 1, 2024         | June 21 2025   |
 | 2.x                                            | ^10.0, ^11.0 | 8.2, 8.3      | June 27, 2024 | January 30, 2025    | June 21 2025   |
-| 3.x (atomic operations and restricted wallets) | ^11.0, ^12.0 | 8.2, 8.3, 8.4 | June 21 2025  | January 29, 2026    |                |
+| 3.x (atomic operations and restricted wallets) | ^11.0, ^12.0 | 8.2, 8.3, 8.4 | June 21 2025  | January 29, 2026    | Oct 19 2026    |
+| 4.x                                            | ^12.0, ^13.0 | 8.3, 8.4      | Oct 19 2026   | Oct 19 2027         |                |
 
 ## Installation:
 
